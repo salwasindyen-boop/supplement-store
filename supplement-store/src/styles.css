@@ -1,1 +1,49 @@
-body{background:#111;color:#fff;font-family:Arial;padding:20px}a{color:red;margin-right:10px}
+body {
+  background: #0f172a;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+nav {
+  margin-bottom: 30px;
+}
+
+nav a {
+  color: #22c55e;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+h1 {
+  color: white;
+}
+
+button {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.product-card {
+  background: #1e293b;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+input,
+textarea {
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+footer {
+  margin-top: 50px;
+}
