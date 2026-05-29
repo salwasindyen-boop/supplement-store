@@ -126,6 +126,7 @@ export default function App() {
         </p>
 
         <p>© 2026 Elite Supplements. All rights reserved.</p>
+        <p>Done by Hasan&Sami.</p>
       </footer>
     </>
   );
