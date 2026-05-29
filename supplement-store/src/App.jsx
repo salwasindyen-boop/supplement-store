@@ -1,29 +1,36 @@
+import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
 const Home = () => (
-  <div>
+  
+   <div>
     <h1>Elite Supplements</h1>
-    <h2>Fuel Your Fitness Journey</h2>
-
-    <p>
-      Premium supplements designed to help you build muscle,
-      improve recovery, and maximize performance.
-    </p>
+    <p>Premium gym nutrition for serious athletes.</p>
 
     <button>Shop Now</button>
 
-    <h2 style={{ marginTop: "40px" }}>Why Choose Us?</h2>
-
+    <h2>Why Choose Us?</h2>
     <ul>
-      <li>✅ Premium Ingredients</li>
-      <li>✅ Fast Shipping</li>
-      <li>✅ Trusted By Athletes</li>
-      <li>✅ Affordable Prices</li>
+      <li>Premium Ingredients</li>
+      <li>Fast Shipping</li>
+      <li>100% Authentic Products</li>
     </ul>
+
+    <h2>Customer Reviews</h2>
+
+    <div className="Creatine Monohydrate">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"Best supplements I've ever used!"</p>
+    </div>
+
+    <div className="Pre-Workout">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"Fast delivery and amazing quality."</p>
+    </div>
   </div>
 );
 
-const Products = () => (
+const Products = ({ addToCart}) => (
   <div>
     <h1>Products</h1>
 
@@ -36,7 +43,9 @@ const Products = () => (
         <h2>Whey Protein</h2>
         <p>25g protein per serving</p>
         <p>$49.99</p>
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart("Whey Protein")}>
+  Add to Cart
+</button>
       </div>
 
       <div className="product-card">
@@ -47,7 +56,9 @@ const Products = () => (
         <h2>Creatine Monohydrate</h2>
         <p>Boost strength and recovery</p>
         <p>$24.99</p>
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart("Creatine Monohydrate")}>
+  Add to Cart
+</button>
       </div>
 
       <div className="product-card">
@@ -58,7 +69,9 @@ const Products = () => (
         <h2>Pre-Workout</h2>
         <p>Energy and focus formula</p>
         <p>$34.99</p>
-        <button>Add to Cart</button>
+        <button onClick={() => addToCart("Pre-Workout")}>
+  Add to Cart
+</button>
       </div>
     </div>
   </div>
@@ -98,6 +111,10 @@ const Contact = () => (
 );
 
 export default function App() {
+    const [cart, setCart] = useState([]);
+    const addToCart = (product) => {
+  setCart([...cart, product]);
+};
   return (
     <>
       <nav>
@@ -106,14 +123,23 @@ export default function App() {
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
 
-        <span className="cart">🛒 Cart</span>
+        <span className="cart">
+  🛒 Cart ({cart.length})
+</span>
       </nav>
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        <Route
+         path="/products"
+         element={<Products addToCart={addToCart} />}
+/>
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route
+  path="/cart"
+  element={<Cart cart={cart} />}
+/>
       </Routes>
 
       <footer>
