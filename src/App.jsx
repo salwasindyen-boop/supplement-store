@@ -2,33 +2,47 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
 const Home = () => (
-  
-   <div>
-    <h1>Elite Supplements</h1>
-    <p>Premium gym nutrition for serious athletes.</p>
+  <div>
 
-    <button>Shop Now</button>
+    <section className="hero">
 
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Premium Ingredients</li>
-      <li>Fast Shipping</li>
-      <li>100% Authentic Products</li>
-    </ul>
+      <div className="hero-text">
 
-    <h2>Customer Reviews</h2>
+        <h1>UNLOCK YOUR PEAK PERFORMANCE</h1>
 
-    <div className="Creatine Monohydrate">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>"Best supplements I've ever used!"</p>
-    </div>
+        <p>
+          Premium supplements for muscle growth,
+          strength, and recovery.
+        </p>
 
-    <div className="Pre-Workout">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>"Fast delivery and amazing quality."</p>
-    </div>
+        <button>Shop Now</button>
+
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438"
+        alt="Fitness"
+      />
+
+    </section>
+<section style={{padding:"50px"}}>
+
+<h2>Customer Reviews</h2>
+
+<div className="product-card">
+⭐⭐⭐⭐⭐
+<p>Best protein I've ever used.</p>
+</div>
+
+<div className="product-card">
+⭐⭐⭐⭐⭐
+<p>Amazing quality and fast delivery.</p>
+</div>
+
+</section>
   </div>
 );
+  
 
 const Products = ({ addToCart}) => (
   <div>
